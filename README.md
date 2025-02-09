@@ -14,13 +14,6 @@ mysql -u [user-name] [db-name] -p < 2522lab5.sql
 # mysql -u root 2522lab5 -p < 2522lab5.sql
 ```
 
-If that fails for whatever reason, try this alternative method.
-Go to `jsonToSql.js` and replace your `USER_NAME`, `PASSWORD`, `DATABASE_NAME`, and run
-
-```sh
-node jsonToSql.js
-```
-
 3. Add the library `mysql-connector-j-9.2.0` to your project via IntelliJ.
 
 4. Add `Database.java` to your project. Add the package declaration and/or edit the imports if necessary to match how you structure your project. See the javadoc for usage.
