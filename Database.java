@@ -1,16 +1,16 @@
-import ca.bcit.comp2522.lab1.Date;
-import ca.bcit.comp2522.lab4.Author;
-import ca.bcit.comp2522.lab4.Book;
-import ca.bcit.comp2522.lab4.Name;
+import lab1.Date;
+import lab4.Author;
+import lab4.Book;
+import lab4.Name;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * A library to read data from MySQL, may be helpful for Lab 5.
+ * A program to read Book and Author data from MySQL.
  * <p>
  * Example usage:
- * <pre>
+ * <pre>{@code
  * Database db = new Database(YOUR_DB_NAME,   // e.g. "comp2522lab5"
  *                            YOUR_USER_NAME, // e.g. "root"
  *                            YOUR_PASSWORD);
@@ -22,10 +22,10 @@ import java.util.ArrayList;
  * ArrayList<Author> allAuthors = db.getAuthors();
  * ArrayList<Author> authorsBornBefore1900 = db.getAuthors(
  *                            "WHERE YEAR(dateOfBirth) < 1900");
- * </pre>
+ * }</pre>
  * <p>
- * This program assumes your database is structured like this:
- * <pre>
+ * This program assumes your database is setup like this:
+ * <pre>{@code
  * CREATE TABLE author (
  *      id          INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
  *      firstName   VARCHAR(49) NOT NULL,
@@ -41,7 +41,7 @@ import java.util.ArrayList;
  *      yearPublished INT NOT NULL,
  *      FOREIGN KEY (author) REFERENCES person(id)
  * );
- * </pre>
+ * }</pre>
  * <p>
  * BY USING THIS SOFTWARE YOU AGREE TO WEAR A HAWAIIAN SHIRT TO THE EXAM.
  *
@@ -157,7 +157,6 @@ public class Database
             resultSet = statement.executeQuery(query);
             while(resultSet.next())
             {
-
                 authors.add(getAuthor(resultSet));
             }
         } catch(final SQLException e)
