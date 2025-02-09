@@ -3,7 +3,7 @@ import ca.bcit.comp2522.lab4.Author;
 import ca.bcit.comp2522.lab4.Book;
 import ca.bcit.comp2522.lab4.Name;
 
-import java.sql.*; // requires the mysql-connector-j-9.2.0 package
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -15,16 +15,16 @@ import java.util.ArrayList;
  *                            YOUR_USER_NAME, // e.g. "root"
  *                            YOUR_PASSWORD);
  *
- * ArrayList allBooks = db.getBooks();
- * ArrayList booksWithTitleMoreThan20Char = db.getBooks(
+ * ArrayList<Book> allBooks = db.getBooks();
+ * ArrayList<Book> booksTitleMoreThan20Char = db.getBooks(
  *                            "WHERE LENGTH(title) > 20");
  *
- * ArrayList allAuthors = db.getAuthors();
- * ArrayList authorsBornBefore1900 = db.getAuthors(
+ * ArrayList<Author> allAuthors = db.getAuthors();
+ * ArrayList<Author> authorsBornBefore1900 = db.getAuthors(
  *                            "WHERE YEAR(dateOfBirth) < 1900");
  * </pre>
  * <p>
- * This library assumes your database is structured like this:
+ * This program assumes your database is structured like this:
  * <pre>
  * CREATE TABLE author (
  *      id          INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -74,7 +74,7 @@ public class Database
     }
 
     /**
-     * Runs the query {@code SELECT * FROM book;}
+     * Runs the query {@code SELECT * FROM book}
      *
      * @return an {@code ArrayList<Book>}
      */
@@ -84,7 +84,7 @@ public class Database
     }
 
     /**
-     * Runs the query {@code SELECT * FROM author;}
+     * Runs the query {@code SELECT * FROM author}
      *
      * @return an {@code ArrayList<Author>}
      */
@@ -94,7 +94,7 @@ public class Database
     }
 
     /**
-     * Runs the query {@code SELECT * FROM book [condition];}
+     * Runs the query {@code SELECT * FROM book [condition]}
      *
      * @param condition a String e.g. "WHERE ..."
      * @return an {@code ArrayList<Book>}
@@ -126,7 +126,7 @@ public class Database
     }
 
     /**
-     * Runs the query {@code SELECT * FROM author [condition];}
+     * Runs the query {@code SELECT * FROM author [condition]}
      *
      * @param condition a String e.g. "WHERE ..."
      * @return an {@code ArrayList<Author>}
