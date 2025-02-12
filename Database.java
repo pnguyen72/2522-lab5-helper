@@ -39,7 +39,7 @@ import java.util.ArrayList;
  *      title         TEXT NOT NULL,
  *      author        INT NOT NULL,
  *      yearPublished INT NOT NULL,
- *      FOREIGN KEY (author) REFERENCES person(id)
+ *      FOREIGN KEY (author) REFERENCES author(id)
  * );
  * }</pre>
  * <p>
